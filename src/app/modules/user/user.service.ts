@@ -12,7 +12,7 @@ const createNewUserIntoDB = async (payload: TUser) => {
     const existingUser = await userModel.findOne({ email: payload.email })
 
     if (existingUser) {
-        throw new AppError(401, 'User with this email already exist')
+        throw new AppError(401, 'User already exist')
     }
     const createUser = await userModel.create(payload);
     const userData = await userModel.findById(createUser._id).select({ password: 0 }) as TUser

@@ -8,6 +8,7 @@ export default {
     port : process.env.PORT,
     database_url : process.env.DATABASE_URL,
     accessTokenSecrete : process.env.ACCESS_TOKEN_SECRETE,
+    resetPasswordSecrete: process.env.RESET_PASSWORD_SECRETE,
     accessTokenExpire: process.env.ACCESS_TOKEN_EXPIRE,
     refreshTokenExpire: process.env.REFRESH_TOKEN_EXPIRE,
 }

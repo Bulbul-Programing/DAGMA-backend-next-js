@@ -26,7 +26,6 @@ const loginUser = async (payload: TLogin) => {
     role: isExistUser.role,
     id: isExistUser._id,
     profilePicture: isExistUser.profilePicture.toString(),
-    premiumStatus: isExistUser.premiumStatus
   };
 
   const accessToken = createToken(
@@ -36,7 +35,7 @@ const loginUser = async (payload: TLogin) => {
   );
   const refreshToken = createToken(
     jwtPayload,
-    config.refreshTokenSecrete as string,
+    config.accessTokenSecrete as string,
     config.refreshTokenExpire as string,
   );
 
@@ -44,6 +43,7 @@ const loginUser = async (payload: TLogin) => {
 };
 
 const getUserDataIntoDB = async (email: string) => {
+  console.log(email);
   const getUser = await userModel.findOne({ email }).select({ password: 0 })
   if (!getUser) {
     throw new AppError(404, 'User not found')

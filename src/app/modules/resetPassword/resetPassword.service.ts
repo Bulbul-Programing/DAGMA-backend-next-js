@@ -1,4 +1,3 @@
-import axios from "axios"
 import { sendMail } from "../../utils/sendMail"
 import { TResetPassword, TValidateCode } from "./resetPassword.interface"
 import { resetPasswordModel } from "./resetPassword.model"
@@ -20,7 +19,7 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
   const generateToken = createToken(jwtPayload, config.resetPasswordSecrete as string, '1m')
 
 
-  const resetPasswordUrl = `https://taste-tribe-server.vercel.app/api/v1/auth/resetPassword?token=${generateToken}`
+  const resetPasswordUrl = `http://localhost:3000/auth/resetPassword?token=${generateToken}`
   
   const data = {
     token : generateToken,
@@ -28,17 +27,17 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
   }
   const sendMailData = {
     to: payload.email,
-    subject: 'Reset Your Password - Test Tribe',
+    subject: 'Reset Your Password - Duaria Abdul Gafoor Model Academy',
     text: `Hello,
 
-    We received a request to reset your password for your Test Tribe account. Use the following 6-digit code to reset your password:
+    We received a request to reset your password for your Duaria Abdul Gafoor Model Academy account. Use the following 6-digit code to reset your password:
 
     Reset Code: ${resetPasswordUrl}
 
     If you did not request a password reset, please ignore this email.
 
     Best regards,
-    Test Tribe Support Team`,
+    Duaria Abdul Gafoor Model Academy Support Team`,
     html: `<!DOCTYPE html>
     <html lang="en">
     <head>
@@ -70,7 +69,7 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
           box-sizing: border-box;
         }
         .header {
-          background-color: #1BEEA2;
+          background-color: #dbeafe;
           padding: 20px 0;
         }
         .header img {
@@ -91,7 +90,7 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
         }
         .reset-code {
           display: inline-block;
-          background-color: #1BEEA2;
+          background-color: #dbeafe;
           color: #ffffff;
           font-size: 18px;
           font-weight: bold;
@@ -106,11 +105,11 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
           margin: 20px 0 0;
         }
         .footer p a {
-          color: #1BEEA2;
+          color: #ff000d;
           text-decoration: none;
         }
         .expire{
-          color: #1BEEA2;
+          color: #ff000d;
           font-weight : 900;
         }
       </style>
@@ -120,14 +119,14 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
         <div class="email-wrapper">
           <!-- Header with Logo -->
           <div class="header">
-            <img src="https://res.cloudinary.com/depy0i4bl/image/upload/v1730037173/freepik-green-food-restaurant-logo-20241027135236jBOI_lptvtg.png" alt="Test Tribe Logo">
+            <img src="https://res.cloudinary.com/durkh1c9d/image/upload/v1739381552/416200583_777597704382658_5573574209946949939_n_1_lejsre.jpg" alt="Duaria Abdul Gafoor Model Academy Logo">
           </div>
 
           <!-- Main Content -->
           <div class="content">
             <h1>Reset Your Password</h1>
             <p>Hello,</p>
-            <p>We received a request to reset your password for your <strong>Test Tribe</strong> account. Use the following this link for reset your password:</p>
+            <p>We received a request to reset your password for your <strong>Duaria Abdul Gafoor Model Academy</strong> account. Use the following this link for reset your password:</p>
             <div class="reset-code">${resetPasswordUrl}</div>
             <div class="expire">expire in 1 minute</div>
             <p>If you did not request this password reset, you can safely ignore this email. This code will expire shortly, so please use it as soon as possible.</p>
@@ -135,8 +134,8 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
 
           <!-- Footer -->
           <div class="footer">
-            <p>Thank you for being part of Test Tribe!</p>
-            <p>&copy; ${new Date().getFullYear()} Test Tribe. All rights reserved.</p>
+            <p>Thank you for being part of Duaria Abdul Gafoor Model Academy!</p>
+            <p>&copy; ${new Date().getFullYear()} Duaria Abdul Gafoor Model Academy. All rights reserved.</p>
           </div>
         </div>
       </div>
