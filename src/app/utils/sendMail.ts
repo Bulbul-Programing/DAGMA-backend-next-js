@@ -13,8 +13,8 @@ interface SendMailOptions {
 const transporter = nodemailer.createTransport({
     service: 'gmail', // Use a popular service or custom SMTP (like smtp.mailtrap.io for testing)
     auth: {
-        user: 'abc.bulblul@gmail.com', // Replace with your email
-        pass: 'hlzj lfxi ecbs lyvj', // Replace with your email password or an app password
+        user: 'dagmaedu@gmail.com', // Replace with your email
+        pass: 'kycv watp okux cwms', // Replace with your email password or an app password
     },
 });
 
@@ -23,7 +23,7 @@ export const sendMail = async (options: SendMailOptions) => {
     const { to, subject, text, html } = options;
 
     const mailOptions = {
-        from: 'abc.bulblul@gmail.com', // Sender's email
+        from: 'dagmaedu@gmail.com', // Sender's email
         to,
         subject,
         text,

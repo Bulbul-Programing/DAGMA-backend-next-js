@@ -9,10 +9,11 @@ export type TUser = {
     profilePicture: String,
     followers: string[],
     following: string[],
-    phoneNumber : string,
+    phoneNumber: string,
+    emailVerified: boolean,
     createdAt?: Date,
     updatedAt?: Date,
-    blockedUser : Boolean
+    blockedUser: Boolean
 }
 
 export const userRoles = {
@@ -31,9 +32,9 @@ export type TUpdateUserData = {
 type TFollowers = [string]
 
 export type TUpdateUserInfo = {
-    name ?: String,
-    password ?: String,
-    profilePicture ?: String,
+    name?: String,
+    password?: String,
+    profilePicture?: String,
 }
 
 export type TUserRole = keyof typeof userRoles;

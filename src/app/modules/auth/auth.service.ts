@@ -43,7 +43,6 @@ const loginUser = async (payload: TLogin) => {
 };
 
 const getUserDataIntoDB = async (email: string) => {
-  console.log(email);
   const getUser = await userModel.findOne({ email }).select({ password: 0 })
   if (!getUser) {
     throw new AppError(404, 'User not found')

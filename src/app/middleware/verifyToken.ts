@@ -13,7 +13,7 @@ const verifyToken = (...requiredRoles: TUserRole[]) => {
     if (!tokenWithBearer) {
       throw new AppError(401, 'You are not authorized!');
     }
-    
+
     const token = tokenWithBearer?.split(' ')[1]
 
     if (!token) {

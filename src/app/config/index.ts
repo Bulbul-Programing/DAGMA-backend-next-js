@@ -11,4 +11,5 @@ export default {
     resetPasswordSecrete: process.env.RESET_PASSWORD_SECRETE,
     accessTokenExpire: process.env.ACCESS_TOKEN_EXPIRE,
     refreshTokenExpire: process.env.REFRESH_TOKEN_EXPIRE,
+    emailVerifySecrete: process.env.EMAIL_VERIFY_SECRETE,
 }

@@ -12,6 +12,7 @@ const userSchema = new Schema<TUser>({
     password: { type: String, required: true, select: 0 },
     phoneNumber: { type: String, required: true, unique: true },
     role: { type: String, enum: ['admin', 'user'], default: 'user' },
+    emailVerified: { type: Boolean, required: true, default: false },
     followers: { type: [String], required: true },
     following: { type: [String], required: true },
     profilePicture: { type: String, default: null },

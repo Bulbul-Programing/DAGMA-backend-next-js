@@ -30,7 +30,7 @@ const resetPasswordMailSendIntoDB = async (payload: TResetPassword) => {
     subject: 'Reset Your Password - Duaria Abdul Gafoor Model Academy',
     text: `Hello,
 
-    We received a request to reset your password for your Duaria Abdul Gafoor Model Academy account. Use the following 6-digit code to reset your password:
+    We received a request to reset your password for your Duaria Abdul Gafoor Model Academy account. Use the following this link for reset your password:
 
     Reset Code: ${resetPasswordUrl}
 
