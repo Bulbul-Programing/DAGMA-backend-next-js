@@ -30,8 +30,9 @@ const getAllNoticeUser = catchAsync(async (req: Request, res: Response) => {
 })
 
 const updateNoticeStatus = catchAsync(async (req: Request, res: Response) => {
+    const noticeId = req.params.id
     const payload = req.body
-    const result = await noticeService.updateNoticeStatusIntoDB(payload)
+    const result = await noticeService.updateNoticeStatusIntoDB(noticeId, payload)
     res.status(200).json({
         success: true,
         massage: 'Notice status update successfully',

@@ -3,6 +3,7 @@ import { userRouter } from '../modules/user/user.routes';
 import { loginRoute } from '../modules/auth/auth.routes';
 import { resetPasswordRoute } from '../modules/resetPassword/resetPassword.routes';
 import { emailVerifyRoute } from '../modules/emailVerify/emailVerify.routes';
+import { noticeRoute } from '../modules/Notice/notice.routes';
 
 const router = express.Router()
 
@@ -22,6 +23,10 @@ const moduleRoutes = [
     {
         path: '/verifyEmail',
         route: emailVerifyRoute
+    },
+    {
+        path: '/notice',
+        route: noticeRoute
     },
 ]
 

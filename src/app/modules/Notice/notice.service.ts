@@ -1,4 +1,5 @@
 import AppError from "../../error/AppError";
+import { TNotice } from "./notice.interface";
 import { noticeModal } from "./notice.model";
 
 const createNewNoticeIntoDB = async (payload: { title: string, description: string, image: string }) => {
@@ -16,12 +17,12 @@ const getAllNoticeUserIntoDB = async () => {
   return result;
 }
 
-const updateNoticeStatusIntoDB = async (payload: { id: string, blockStatus: boolean }) => {
-  const isNoticeExist = await noticeModal.findById(payload.id)
+const updateNoticeStatusIntoDB = async (id: string, updateInfo: Partial<TNotice>) => {
+  const isNoticeExist = await noticeModal.findById(id)
   if (!isNoticeExist) {
     throw new AppError(404, 'Notice not found')
   }
-  const blockNotice = await noticeModal.findByIdAndUpdate(payload.id, { isBlock: payload.blockStatus }, { new: true })
+  const blockNotice = await noticeModal.findByIdAndUpdate(id, updateInfo, { new: true })
   return blockNotice
 }
 

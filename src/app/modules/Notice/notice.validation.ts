@@ -10,8 +10,9 @@ const creteNoticeValidationSchema = z.object({
 
 const updateNoticeValidationSchema = z.object({
     body: z.object({
-        id: z.string({ required_error: "Notice id is required" }),
-        blockStatus: z.boolean({ required_error: "Notice status is required" })
+        noticeTitle: z.string({ required_error: "Notice title is required" }).optional(),
+        noticeDescription: z.string({ required_error: "Notice description is required" }).optional(),
+        image: z.string({ required_error: "Notice image is required" }).optional()
     })
 });
 

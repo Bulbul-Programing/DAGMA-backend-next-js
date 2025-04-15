@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/create', verifyToken('admin'), validateRequest(noticeValidationSchema.creteNoticeValidationSchema), noticeController.createNotice)
 router.get('/admin', verifyToken('admin'), noticeController.getAllNoticeAdmin)
 router.get('/user', noticeController.getAllNoticeUser)
-router.put('/update-status', verifyToken('admin'), validateRequest(noticeValidationSchema.updateNoticeValidationSchema), noticeController.updateNoticeStatus)
+router.put('/update/:id', verifyToken('admin'), validateRequest(noticeValidationSchema.updateNoticeValidationSchema), noticeController.updateNoticeStatus)
 router.delete('/delete/:id', verifyToken('admin'), noticeController.deleteNotice)
 router.get('/count', noticeController.countNotice)
 
