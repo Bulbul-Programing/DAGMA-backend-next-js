@@ -4,6 +4,7 @@ import { loginRoute } from '../modules/auth/auth.routes';
 import { resetPasswordRoute } from '../modules/resetPassword/resetPassword.routes';
 import { emailVerifyRoute } from '../modules/emailVerify/emailVerify.routes';
 import { noticeRoute } from '../modules/Notice/notice.routes';
+import { teacherRoute } from '../modules/Teacher/teacher.routes';
 
 const router = express.Router()
 
@@ -27,6 +28,10 @@ const moduleRoutes = [
     {
         path: '/notice',
         route: noticeRoute
+    },
+    {
+        path: '/teacher',
+        route: teacherRoute
     },
 ]
 
