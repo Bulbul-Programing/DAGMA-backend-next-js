@@ -5,6 +5,7 @@ import { resetPasswordRoute } from '../modules/resetPassword/resetPassword.route
 import { emailVerifyRoute } from '../modules/emailVerify/emailVerify.routes';
 import { noticeRoute } from '../modules/Notice/notice.routes';
 import { teacherRoute } from '../modules/Teacher/teacher.routes';
+import { galleryRoute } from '../modules/Gallery/gallery.routes';
 
 const router = express.Router()
 
@@ -32,6 +33,10 @@ const moduleRoutes = [
     {
         path: '/teacher',
         route: teacherRoute
+    },
+    {
+        path: '/gallery',
+        route: galleryRoute
     },
 ]
 

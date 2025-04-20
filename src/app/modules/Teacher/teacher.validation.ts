@@ -24,7 +24,7 @@ const updateTeacherValidationSchema = z.object({
             .string()
             .min(11, "Phone must be 11 digits")
             .max(11, "Phone must be 11 digits")
-            .regex(bdPhoneRegex, "Invalid Bangladeshi phone number"),
+            .regex(bdPhoneRegex, "Invalid Bangladeshi phone number").optional(),
         photo: z.string().url("Photo must be a valid URL").optional(),
         designation: z.string().min(1, "Designation is required").optional(),
         subject: z.string().min(1, "Subject is required").optional(),
